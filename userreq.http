@@ -1,0 +1,37 @@
+
+### user api reqs
+### user register
+post http://localhost:4000/user-api/user
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "username":"sai",
+    "password":"sai",
+    "email":"saii@mail.com"
+}
+
+#### user login
+post http://localhost:4000/user-api/login
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "username":"sai",
+    "password":"sai"
+   
+}
+
+### get articles
+get http://localhost:4000/user-api/articles
+
+### write comment
+post http://localhost:4000/user-api/comment
+Content-Type: application/json
+
+{
+    "articleId":"1708964671",
+    "username":"sai",
+    "comments":"content of comment"   
+}
+

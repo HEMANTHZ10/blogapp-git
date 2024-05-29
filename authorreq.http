@@ -1,0 +1,100 @@
+
+###author req
+### author registration
+post http://localhost:4000/author-api/user
+Content-Type: application/json
+
+
+{
+    "userType":"author",
+    "username":"raju",
+    "password":"vemana",
+    "email":"vemana@gmail.com"
+}
+
+
+
+
+
+### author login
+post http://localhost:4000/author-api/login
+Content-Type: application/json
+
+{
+    "userType":"author",
+    "username":"raju",
+    "password":"vemana"
+}
+
+# ###write article
+# post http://localhost:4000/author-api/article
+# Content-Type: application/json
+
+
+# {
+#     "username":"raju",
+#     "title":"JavaScript vs ECMAScript",
+#     "body":"some content",
+#     "published":"{{$datetime iso8601}}",
+#     "updated":"{{$datetime iso8601}}" 
+# }
+
+###create article
+
+post http://localhost:4000/author-api/article
+Content-Type: application/json
+
+{
+    "articleId":"{{$timestamp}}",
+    "title":"Importance of Web Development",
+    "category":"programming",
+    "content":"In today's interconnected world, web development plays a pivotal role in shaping our digital landscape. It has become an indispensable tool for businesses, individuals, and society at large. From its humble beginnings to the dynamic and evolving field it is today, web development has revolutionized the way we communicate, interact, and conduct business. This essay will explore the importance of web development in the digital era, its impact on society and businesses, its evolution over time, and the exciting future prospects it holds for web developers.",
+    "dateOfCreation":"{{$datetime iso8601}}",
+    "dateOfModification":"{{$datetime iso8601}}",
+    "username":"raju",
+    "comments": [ ],
+    "status":true
+}
+
+
+
+###update article
+
+put http://localhost:4000/author-api/article
+Content-Type: application/json
+
+{
+    "articleId":"1708964671",
+    "title":"Importance of Web Development",
+    "category":"programming",
+    "content":"In today's interconnected world, web development plays a pivotal role in shaping our digital landscape. It has become an indispensable tool for businesses, individuals, and society at large. ",
+    "dateOfCreation":"2024-02-26T16:24:31.389Z",
+    "dateOfModification":"{{$datetime iso8601}}",
+    "username":"vemana",
+    "comments": [ ],
+    "status":true
+}
+
+
+
+### soft delete
+
+put http://localhost:4000/author-api/article/1708964671
+Content-Type: application/json
+
+{
+    "articleId":"1708964671",
+    "title":"Importance of Web Development",
+    "category":"programming",
+    "content":"In today's interconnected world, web development plays a pivotal role in shaping our digital landscape. It has become an indispensable tool for businesses, individuals, and society at large. ",
+    "dateOfCreation":"2024-02-26T16:24:31.389Z",
+    "dateOfModification":"{{$datetime iso8601}}",
+    "username":"vemana",
+    "comments": [ ],
+    "status":true
+}
+
+
+
+### read articles
+get http://localhost:4000/author-api/articles/vemana
